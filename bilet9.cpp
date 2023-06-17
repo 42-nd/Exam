@@ -48,9 +48,9 @@ void moveToBack(list* head, int val) {
 int main()
 {
     ifstream spisok;
-    list* p, * head, *r;
+    list* p, * head;
     int l = 1;
-    p = head = r = new list;
+    p = head = new list;
     
     spisok.open("spisok.txt");
     if (spisok) {
