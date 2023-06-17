@@ -2,16 +2,18 @@
 #include <fstream>
 using namespace std;
 
-struct list {
+struct list
+{
     int elem;
-    list* next;
-    list* prev;
+    list *next;
+    list *prev;
 };
 
-list *zamena(list *head) {
+list *zamena(list *head)
+{
 
-    list* first = head;
-    list* last = head->prev;
+    list *first = head;
+    list *last = head->prev;
     first->prev = last->prev;
     last->prev->next = first;
     last->prev = first;
@@ -26,13 +28,16 @@ int main()
 {
 
     ifstream spisok;
-    list* p,*head;
+    list *p, *head;
     p = head = new list;
-    spisok.open("spisok.txt");
-    if (spisok) {
-        if ((spisok.peek() != EOF)) {
-            while (!spisok.eof()) {
-                spisok>>p->elem;
+    spisok.open("ticket1.txt");
+    if (spisok)
+    {
+        if ((spisok.peek() != EOF))
+        {
+            while (!spisok.eof())
+            {
+                spisok >> p->elem;
                 p->next = new list;
                 p->next->prev = p;
                 p = p->next;
@@ -41,15 +46,14 @@ int main()
             p->next = head;
             head->prev = p;
 
-            head=zamena(head);
+            head = zamena(head);
             p = head;
             cout << p->elem;
-            while (p != head->prev) {
+            while (p != head->prev)
+            {
                 p = p->next;
                 cout << p->elem;
             }
         }
     }
 }
-
-
