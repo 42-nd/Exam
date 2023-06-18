@@ -32,7 +32,7 @@ void moveToBack(list* head, int val) {
         last = last->next;
     }
     list* current = head;
-    while (current != last) {
+    while (current->next != last) {
         if (current->next->elem == val) {
             list* temp = current->next;
             current->next = current->next->next;
