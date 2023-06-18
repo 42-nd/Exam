@@ -1,0 +1,7 @@
+chair 20
+sofa 200
+table 10
+tomato 5
+lamp 50
+mouse 44.2
+keyboard 22.5
