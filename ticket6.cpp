@@ -3,11 +3,11 @@
 using namespace std;
 
 struct list {
-	char data;
+	int data;
 	list* next;
 };
 
-void listTransform(list* h, char n){
+void listTransform(list* h, int n){
 	int cnt = 0, cnt1 = 0;
 	list* p;
 	list* s;
@@ -36,14 +36,14 @@ void listTransform(list* h, char n){
 		}
 		p = h->next;
 		while (p->next != NULL){
-			cout << p->data;
+			cout << p->data << " ";
 			p = p->next;
 		}
 	}
 	else{
 		p = h->next;
 		while (p->next != NULL){
-			cout << p->data;
+			cout << p->data << " ";
 			p = p->next;
 		}
 	}
@@ -54,7 +54,7 @@ int main(){
 	list* head;
 	ifstream file;
 	file.open("file.txt");
-	char sym, elem;
+	int sym, elem;
 	cout << "select the elem you want to delete: ";
 	cin >> elem;
 	head = new list;
