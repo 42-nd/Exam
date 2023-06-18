@@ -38,17 +38,20 @@ void addTreeElement(dat dummy, tree *&node)
 void delTreeMaxElement(tree *&node)
 {
     if (node->right != nullptr)
-	{
-		delTreeMaxElement(node->right);
-	}
-	else if (node->left == nullptr){
+    {
+        delTreeMaxElement(node->right);
+    }
+    else if (node->left == nullptr)
+    {
         node = nullptr;
     }
-	else if (node->left != nullptr){
-		node = node->left;
+    else if (node->left != nullptr)
+    {
+        node = node->left;
     }
-	else{
-		node->left = node;
+    else
+    {
+        node->left = node;
     }
 }
 
@@ -62,17 +65,16 @@ void printTree(tree *&node)
     }
 }
 
-
 int main()
 {
-    ifstream text("ticket21.txt");
+    ifstream input_file("ticket21.txt");
     tree *root;
     root = nullptr;
     dat dummy;
-    while (!text.eof())
+    while (!input_file.eof())
     {
-        text >> dummy.name;
-        text >> dummy.elem;
+        input_file >> dummy.name;
+        input_file >> dummy.elem;
         addTreeElement(dummy, root);
     }
     printTree(root);

@@ -1,0 +1,10 @@
+Kim 10
+Thompson 14 
+Christensen 20
+McCormick 70
+Adams 19
+Boyd  50
+Howard 30
+Davis 23
+Johnson 44
+Brown 32
