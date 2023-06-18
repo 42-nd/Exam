@@ -10,7 +10,7 @@ struct list {
 void printsp(list* head) {
     list* p = head->next;
     while (p->next != nullptr) {
-        cout << p->elem;
+        cout << p->elem<<" ";
         p = p->next;
     }
 }
