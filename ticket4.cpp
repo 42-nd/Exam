@@ -14,7 +14,7 @@ struct node
 	int elem;
 };
 
-void recurse(node* head, int& sum, int& count)
+void recurse(node* head, float& sum, int& count)
 {
 	if (head->next != NULL)
 	{
@@ -28,7 +28,7 @@ void recurse(node* head, int& sum, int& count)
 int main()
 {
 	ifstream fin("input.txt");
-	int sum = 0, count = 0;
+	float sum = 0, count = 0;
 	node* list = new node; list->next = NULL; node* head; head = list;
 	while (!fin.eof())
 	{
